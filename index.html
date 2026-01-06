@@ -3,58 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soy Mujer Imponente</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Soy Mujer Imponente | Liderazgo y Bienestar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #fe66c0;
+            --secondary: #5de0e6;
+            --dark: #2d3436;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
         body {
             margin: 0;
-            font-family: "Helvetica Neue", Arial, sans-serif;
-            background-color: #fafafa;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark);
             line-height: 1.6;
-            min-height: 100vh;
         }
 
-        header {
-            background: linear-gradient(to right, #fe66c0, #5de0e6);
-            padding: 30px 10px;
+        
+        .hero {
+            background: linear-gradient(135deg, #5de0e6 0%, #fe66c0 100%);
+            padding: 80px 20px;
             text-align: center;
             color: white;
+            clip-path: ellipse(150% 100% at 50% 0%); 
         }
 
-        header h1 {
-            font-size: 38px;
-            margin: 0;
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .main-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
-        header p {
-            font-size: 18px;
-            margin-top: 5px;
+        .subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 20px auto;
+            opacity: 0.9;
+            font-weight: 300;
         }
 
-        .hero-section {   
-            background: linear-gradient(135deg, #5de0e6, #fe66c0); 
-            display: flex;
-            flex-direction: column;
-            justify-content: center; 
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       
+        .video-wrapper {
+            max-width: 800px;
+            margin: -60px auto 60px; 
+            padding: 0 20px;
         }
 
         .video-container {
             position: relative;
-            width: 100%;
-            max-width: 700px; 
-            aspect-ratio: 16 / 9; 
-            margin: 30px auto;
-            border-radius: 20px; 
-            overflow: hidden; 
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            border: 4px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            background: #000;
         }
 
         .video-container iframe {
@@ -66,203 +90,216 @@
             border: none;
         }
 
-        .main-title {
-            font-size: 3em; 
-            font-weight: 600;
-            margin-bottom: 20px;
-            margin-bottom: 20px;
+       
+        .container {
+            width: 95%;
+            max-width: 1300px;
+            margin: 0 auto 80px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr; 
         }
-
-        .subtitle {
-            font-size: 1.4em;
-            font-weight: 400;
-            margin-top: 20px; 
-            max-width: 600px;
-            line-height: 1.6;
-            color: white; 
-        }
-        
 
       
-        .logo-container {
-            margin: 30px 0;
-        }
-
-        .logo {
-            width: 100%; 
-            max-width: 150px; 
-            height: auto;
-            border-radius: 5px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+        @media (min-width: 600px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
        
-        @media (max-width: 768px) {
-            .main-title {
-                font-size: 2.2em;
+        @media (min-width: 1024px) {
+            .container {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 15px; 
             }
-            .subtitle {
-                font-size: 1em;
-            }
-            .logo {
-                max-width: 120px;
-            }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 20px 15px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
         }
 
-        .container {
-            width: 90%;
-            max-width: 900px;
-            margin: 40px auto;
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
         }
 
-        .service {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            border-left: 6px solid #fe66c0;
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--primary);
         }
 
-        .service h2 {
+        .service-card h2 {
+            font-size: 1.25rem;
+            line-height: 1.3;
+            color: var(--dark);
+            margin-top: 15px;
+            min-height: 60px;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .service-card p {
+            text-align: justify;
             margin-top: 0;
-            font-size: 24px;
-            color: #2f2f2f;
+            margin-bottom: 15px;
         }
 
-        .service p {
-            margin: 10px 0;
-            color: #555;
-        }
-
-   
-        .benefits {
+        .price-tag {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
             margin: 15px 0;
-            padding-left: 20px;
+            display: block;
+        }
+
+        .benefits {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            flex-grow: 1;
         }
 
         .benefits li {
-            margin-bottom: 6px;
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.95rem;
         }
 
-        .cta {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 18px;
-            background: #5de0e6;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
+        .benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
             font-weight: bold;
         }
 
-        footer {
+        .cta-button {
+            display: block;
             text-align: center;
-            padding: 30px 10px;
-            font-size: 14px;
-            color: #777;
-            margin-top: 40px;
+            background: var(--dark);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            margin-top: 20px;
         }
 
+        .cta-button:hover {
+            background: var(--primary);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #eee;
+            text-align: center;
+            padding: 50px 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 60px 20px 100px; }
+            .video-wrapper { margin-top: -80px; }
+            .main-title { font-size: 2rem; }
+        }
     </style>
 </head>
-
 <body>
 
-   <header class="hero-section">
-    <h1 class="main-title">Soy Mujer Imponente</h1>
-
+<section class="hero">
     <div class="logo-container">
-        <img src="img/smi.png" alt="Logo SMI - Soy Mujer Imponente" class="logo">
-    </div> 
-    <div class="video-container">
-        <iframe 
-        src="https://www.youtube.com/embed/m5KOyvYrxIQ?autoplay=1&mute=1&loop=1&playlist=m5KOyvYrxIQ&controls=1" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen>
-    </iframe>
-    </div> 
+        <img src="img/smi.png" alt="Logo SMI" class="logo">
+    </div>
+    <h1 class="main-title">Soy Mujer Imponente</h1>
     <p class="subtitle">
         Guío a mujeres a sanar, fortalecerse y liderar su vida con claridad, propósito y autoestima. 
-        Un equilibrio entre bienestar emocional y crecimiento profesional.
+        El equilibrio perfecto entre bienestar emocional y éxito personal.
     </p>
-</header>
+</section>
 
-<div class="container">
+<div class="video-wrapper">
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/m5KOyvYrxIQ?autoplay=1&mute=1&loop=1&playlist=m5KOyvYrxIQ" 
+            title="Video Presentación" 
+            allowfullscreen>
+        </iframe>
+    </div>
+</div>
 
-    <div class="service">
-        <h2>Acompañamiento en Bienestar Emocional para Mujeres</h2>
-        <p>Espacio personalizado para ayudarte a gestionar emociones, crear hábitos sostenibles y reconectar contigo misma desde un enfoque humano, práctico y respetuoso. Ideal si atraviesas cambios, cargas mentales o momentos que te piden más fuerza interior.</p>
-        <p><strong>Beneficios:</strong></p>
+<main class="container">
+    <article class="service-card">
+        <h2>Bienestar Emocional</h2>
+        <p>Gestión de emociones y hábitos sostenibles desde un enfoque práctico y humano.</p>
+        <span class="price-tag">$70.000 COP / Sesión</span>
         <ul class="benefits">
             <li>Claridad emocional y mental</li>
-            <li>Mejora de autoestima y autoconfianza</li>
-            <li>Hábitos reales para tu vida diaria</li>
-            <li>Mayor capacidad para tomar decisiones</li>
-            <li>Sensación de equilibrio y bienestar</li>
+            <li>Mejora de autoestima y confianza</li>
+            <li>Hábitos reales para tu día a día</li>
+            <li>Modalidad Virtual (45 min)</li>
         </ul>
-        <p><strong>Duración:</strong> Sesión de 45 minutos</p>
-        <p><strong>Modalidad:</strong> Virtual</p>
-        <p><strong>Tarifa:</strong> $70.000 COP por sesión</p>
-        <p><strong>Paquete:</strong> 4 sesiones (1 mes): $250.000 COP</p>
-        <a class="cta" href="https://wa.me/573234240882">Escríbeme para agendar</a>
-    </div>
+        <a class="cta-button" href="https://wa.me/message/C5ZES66757IMA1">Agendar Sesión</a>
+    </article>
 
-    <div class="service">
-        <h2>Mentoría de Confianza y Autoliderazgo para Mujeres</h2>
-        <p>Programa pensado para mujeres que quieren liderar su vida con seguridad. Trabajamos mentalidad, límites sanos, propósito personal y toma de decisiones conscientes.</p>
-        <p><strong>Beneficios:</strong></p>
+    <article class="service-card" style="border-color: var(--secondary);">
+        <h2 style="color: var(--primary);">Confianza y Autoliderazgo</h2>
+        <p>Programa de 4 semanas para diseñar tu visión y aprender a poner límites sanos.</p>
+        <span class="price-tag">$260.000 COP Programa</span>
         <ul class="benefits">
             <li>Fortaleces tu autoliderazgo</li>
             <li>Identificas bloqueos personales</li>
-            <li>Diseñas tu visión y tu plan</li>
-            <li>Aprendes a poner límites sin culpal</li>
             <li>Alineas tu energía con tus metas</li>
+            <li>Acompañamiento semanal guiado</li>
         </ul>
-        <p><strong>Duración:</strong> Programa de 4 semanas (1 sesión semanal) 60 minutos</p>
-        <p><strong>Modalidad:</strong> Virtual</p>
-        <p><strong>Tarifa:</strong> $260.000 COP el programa completo</p>
-        <p><strong>Versión intensiva:</strong> WhatsApp ilimitado + tareas guiadas $320.000 COP</p>
-        <a class="cta" href="https://wa.me/573234240882">Escríbeme para reservar tu cupo</a>
-    </div>
+        <a class="cta-button" href="https://wa.me/message/C5ZES66757IMA1" style="background: var(--primary);">Reservar Cupo</a>
+    </article>
 
-    <div class="service">
-        <h2>Asesoría para Madres Solteras con Enfoque en Bienestar y Organización</h2>
-        <p>Acompañamiento creado desde tu propia experiencia. Apoyo en gestión del tiempo, emociones, rutinas y mentalidad para mujeres que sostienen su hogar solas y quieren sentirse más fuertes y acompañadas.</p>
-        <p><strong>Beneficios:</strong></p>
+    <article class="service-card">
+        <h2>Apoyo a Madres Solteras</h2>
+        <p>Organización y bienestar para mujeres que sostienen su hogar solas.</p>
+        <span class="price-tag">$80.000 COP / Sesión</span>
         <ul class="benefits">
-            <li>Estrategias para equilibrar cargas</li>
-            <li>Bienestar emocional en el día a día</li>
+            <li>Equilibrio de cargas y tiempo</li>
             <li>Organización realista y sostenible</li>
-            <li>GSentirte acompañada, escuchada y validada</li>
+            <li>Espacio de validación y escucha</li>
+            <li>Paquetes de 3 sesiones disponibles</li>
         </ul>
-        <p><strong>Duración:</strong> Sesión de 45 minutos</p>
-         <p><strong>Modalidad:</strong> Virtual</p>
-        <p><strong>Tarifa:</strong> $80.000 COP por sesión</p>
-        <p><strong>Paquete:</strong> 3 sesiones (proceso de 3 semanas): $210.000 COP</p>
-        <a class="cta" href="https://wa.me/573234240882">Escríbeme para agendar</a>
-    </div>
+        <a class="cta-button" href="https://wa.me/message/C5ZES66757IMA1">Solicitar Apoyo</a>
+    </article>
 
-    <div class="service">
-        <h2>Talleres y Charlas para Grupos, Empresas o Comunidades</h2>
-        <p>Espacios formativos sobre bienestar, liderazgo femenino, mentalidad, hábitos y autocuidado. Diseñados para impactar, inspirar y brindar herramientas prácticas.</p>
-        <p><strong>Beneficios:</strong></p>
+    <article class="service-card">
+        <h2>Talleres y Charlas</h2>
+        <p>Espacios formativos para grupos, empresas o comunidades sobre liderazgo femenino.</p>
+        <span class="price-tag">A medida</span>
         <ul class="benefits">
-            <li>Contenido aplicable y transformador</li>
-            <li>Reflexión guiada y motivadora</li>
-            <li>Fortalecimiento del liderazgo femenino</li>
-            <li>Mayor cohesión, empatía y comunicación</li>
+            <li>Contenido 100% aplicable</li>
+            <li>Fortalecimiento de equipos</li>
+            <li>Inspiración y herramientas prácticas</li>
+            <li>Duración según requerimiento</li>
         </ul>
-        <p><strong>Duración:</strong> Según la necesidad del grupo</p>
-        <a class="cta" href="https://wa.me/573234240882">Solicitar información</a>
-    </div>
-
-</div>
+        <a class="cta-button" href="https://wa.me/message/C5ZES66757IMA1">Más Información</a>
+    </article>
+</main>
 
 <footer>
-    © 2025 Soy Mujer Imponente — Creado por Irina Ballesteros Ospino
+    <p><strong>Soy Mujer Imponente</strong></p>
+    <p>© 2026 — Creado por Irina Ballesteros Ospino</p>
 </footer>
 
 </body>
