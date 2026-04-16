@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soy Mujer Imponente | Liderazgo y Bienestar | Irina Ballesteros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+       
+        :root {
+            --primary: #fe66c0; 
+            --primary-dim: rgba(254, 102, 192, 0.1);
+            --secondary: #5de0e6;
+            --secondary-dark: #4bc0c6;
+            --dark: #2d3436;
+            --light-bg: #fefeff;
+            --white: #ffffff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --shadow-light: 0 5px 15px rgba(0,0,0,0.05);
+            --shadow-dark: 0 15px 35px rgba(0,0,0,0.1);
+            --glass: rgba(255, 255, 255, 0.7);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 { font-weight: 700; color: var(--dark); margin-top: 0; }
+        p { color: var(--text-muted); margin-bottom: 1.5rem; }
+
+        
+        .section { padding: 80px 20px; }
+        .container-lg { max-width: 1200px; margin: 0 auto; width: 100%; }
+        .text-center { text-align: center; }
+
+   
+        header {
+            background: var(--white);
+            padding: 15px 20px;
+            position: fixed;
+            top: 0; width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo-link { display: flex; align-items: center; text-decoration: none; }
+        .nav-logo { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--secondary); margin-right: 10px; }
+        .nav-brand { font-weight: 700; color: var(--dark); font-size: 1.2rem; }
+
+        .nav-menu { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; }
+        .nav-menu a { text-decoration: none; color: var(--text-main); font-weight: 400; font-size: 0.95rem; transition: var(--transition); }
+        .nav-menu a:hover { color: var(--primary); }
+
+        @media (max-width: 768px) { .nav-menu { display: none; } }
+
+    
+        .hero {
+            background: linear-gradient(135deg, #ccfbfd 0%, #ffe4f2 100%);
+            padding: 160px 20px 100px; 
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 80px;
+            background: var(--light-bg);
+            clip-path: polygon(0 100%, 100% 100%, 100% 0);
+        }
+
+        .logo-container { margin-bottom: 25px; position: relative; display: inline-block;}
+        .logo { width: 140px; height: 140px; border-radius: 50%; border: 6px solid white; box-shadow: var(--shadow-dark); transition: var(--transition); }
+        .logo:hover { transform: scale(1.03) rotate(3deg); }
+
+        .main-title { font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 15px; }
+        .main-title span { color: var(--primary); }
+
+        .subtitle { font-size: 1.3rem; max-width: 750px; margin: 25px auto; color: var(--dark); opacity: 0.9; font-weight: 300; line-height: 1.5; }
+
+   
+        .video-section { padding-top: 0; margin-top: -60px; position: relative; z-index: 10; }
+        .video-wrapper { max-width: 850px; margin: 0 auto; padding: 0 20px; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-dark); background: #000; border: 4px solid var(--white); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+    
+        .problem-section { background: var(--light-bg); padding-bottom: 40px; }
+        .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+        .problem-item { background: var(--white); padding: 30px; border-radius: 20px; box-shadow: var(--shadow-light); border-left: 4px solid #eee; transition: var(--transition); }
+        .problem-item:hover { border-left-color: var(--secondary); transform: translateX(5px); }
+        .problem-item h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--dark); }
+        .problem-item p { margin-bottom: 0; font-size: 0.95rem; }
+
+       
+        .services-section { background: #f4f7f8; position: relative; }
+        .services-section::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100px; background: var(--light-bg); clip-path: polygon(0 0, 100% 0, 0 100%); }
+
+        .section-title { font-size: 2.5rem; margin-bottom: 10px; }
+        .section-subtitle { max-width: 600px; margin: 0 auto 60px; font-size: 1.1rem; }
+
+        .services-container {
+            display: grid;
+            gap: 25px;
+            grid-template-columns: 1fr;
+            align-items: start;
+        }
+
+        @media (min-width: 768px) { .services-container { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1100px) { .services-container { grid-template-columns: repeat(4, 1fr); gap: 20px; } }
+
+      
+        .service-card {
+            background: var(--white); /* Fallback */
+            background: var(--glass);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 40px 25px 30px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255,255,255,0.4);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: var(--shadow-light);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-dark);
+            background: var(--white);
+        }
+
+    
+        .service-card.featured {
+            grid-column: span 1;
+            border: 2px solid var(--primary);
+            background: var(--white);
+            box-shadow: 0 10px 40px rgba(254, 102, 192, 0.15);
+        }
+        @media (min-width: 1100px) { .service-card.featured { transform: scale(1.05); } .service-card.featured:hover { transform: scale(1.05) translateY(-5px); } }
+
+        .card-tag {
+            position: absolute; top: 15px; right: 15px;
+            background: var(--primary); color: white;
+            padding: 5px 15px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+        }
+
+        .service-icon { font-size: 2rem; margin-bottom: 20px; color: var(--secondary-dark); }
+        .service-card.featured .service-icon { color: var(--primary); }
+
+        .service-card h2 { font-size: 1.4rem; line-height: 1.3; margin-bottom: 10px; min-height: 55px; display: flex; align-items: center;}
+        .service-card .card-desc { font-size: 0.95rem; margin-bottom: 20px; flex-grow: 0; min-height: 70px; }
+
+        .price-tag { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin: 0 0 25px; display: block; padding-bottom: 15px; border-bottom: 1px solid #eee; text-align: center; }
+        .service-card.featured .price-tag { color: var(--primary); border-bottom-color: var(--primary-dim); }
+
+        .benefits { list-style: none; padding: 0; margin: 0 0 30px; flex-grow: 1; }
+        .benefits li { margin-bottom: 14px; padding-left: 30px; position: relative; font-size: 0.9rem; color: var(--text-main); line-height: 1.4; }
+        .benefits li::before {
+            content: '→'; position: absolute; left: 0; color: var(--secondary); font-weight: bold; font-size: 1.1rem;
+        }
+        .service-card.featured .benefits li::before { color: var(--primary); }
+
+        .cta-button {
+            display: block; text-align: center;
+            background: var(--dark); color: white;
+            padding: 16px 20px; border-radius: 14px;
+            text-decoration: none; font-weight: 600; font-size: 1rem;
+            transition: var(--transition);
+            margin-top: auto;
+            border: 2px solid var(--dark);
+        }
+
+        .cta-button:hover { background: var(--primary); border-color: var(--primary); transform: translateY(-2px); }
+
+        .service-card.featured .cta-button { background: var(--primary); border-color: var(--primary); }
+        .service-card.featured .cta-button:hover { background: var(--white); color: var(--primary); }
+
+        
+        .about-section { background: var(--white); }
+        .about-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+        @media (min-width: 768px) { .about-grid { grid-template-columns: 1fr 2fr; } }
+
+        .about-image-container { text-align: center; }
+        .about-image { width: 100%; max-width: 300px; border-radius: 30px; box-shadow: var(--shadow-dark); border: 10px solid var(--white); transform: rotate(-3deg); }
+
+        .about-text h2 { font-size: 2.2rem; margin-bottom: 20px; }
+        .about-text p { font-size: 1.05rem; margin-bottom: 1.2rem; }
+        .sig { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--primary); font-size: 1.3rem; margin-top: 20px; display: block;}
+
+        
+        .testimonials-section { background: #f4f7f8; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .testimonial-card { background: var(--white); padding: 30px; border-radius: 20px; box-shadow: var(--shadow-light); position: relative;}
+        .testimonial-card::before { content: '“'; position: absolute; top: 10px; left: 20px; font-size: 5rem; color: #eee; font-family: serif; line-height: 1; }
+        .testimonial-text { font-style: italic; font-size: 0.95rem; margin-bottom: 20px; position: relative; z-index: 1; color: var(--text-main); }
+        .testimonial-meta { display: flex; align-items: center; gap: 15px; }
+        .testimonial-avatar { width: 50px; height: 50px; border-radius: 50%; background: #eee; } 
+        .testimonial-name { font-weight: 600; color: var(--dark); font-size: 0.9rem; margin: 0; }
+        .testimonial-title { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
+
+  
+        footer { background: var(--dark); text-align: center; padding: 60px 20px; color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+        footer p { color: rgba(255,255,255,0.6); margin-bottom: 10px; }
+        footer strong { color: var(--white); font-size: 1.1rem; }
+        .footer-logo { width: 60px; height: auto; border-radius: 50%; border: 2px solid var(--secondary); margin-bottom: 20px; }
+
+    
+        .wa-float {
+            position: fixed; bottom: 30px; right: 30px;
+            background-color: #25d366; color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            text-align: center; font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .wa-float:hover { transform: scale(1.1); background-color: #20ba5a; box-shadow: 2px 5px 15px rgba(0,0,0,0.3); }
+
+       
+        .wa-icon { width: 34px; height: 34px; fill: white; }
+
+
+        @media (max-width: 768px) {
+            .hero { padding-top: 130px; }
+            .main-title { font-size: 2.2rem; }
+            .subtitle { font-size: 1.1rem; }
+            .section { padding: 60px 20px; }
+            .video-wrapper { margin-top: -40px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container-lg" style="display:flex; justify-content:space-between; align-items:center;">
+        <a href="#" class="nav-logo-link">
+            <img src="img/smi.png" alt="Logo SMI" class="nav-logo">
+            <span class="nav-brand">Soy Mujer Imponente</span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#sobre-mi">Sobre Mí</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="https://wa.me/message/C5ZES66757IMA1" style="color:var(--primary); font-weight:600;">Contacto</a></li>
+        </ul>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container-lg">
+        <div class="logo-container">
+            <img src="img/smi.png" alt="Logo SMI" class="logo">
+        </div>
+        <h1 class="main-title">Deja de sobrevivir.<br>Empieza a <span>Liderar tu Vida</span>.</h1>
+
+        <p class="subtitle">
+            Acompaño a mujeres autoexigentes y saturadas a recuperar su claridad mental, reorganizar su mundo emocional y reconstruir una confianza inquebrantable para volver a decidir con seguridad.
+        </p>
+    </div>
+</section>
+
+<div class="video-section">
+    <div class="video-wrapper">
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/dhrJrxJuoH0"
+                title="Bienvenida a Soy Mujer Imponente"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<section id="empatia" class="problem-section section">
+    <div class="container-lg text-center">
+        <h2 class="section-title" style="font-size:2rem;">¿Te identificas con esto?</h2>
+        <p class="section-subtitle">Sé lo que es llevar el mundo sobre los hombros y olvidarse de una misma.</p>
+
+        <div class="problem-grid text-center">
+            <div class="problem-item">
+                <h3>Saturación Mental</h3>
+                <p>Tus pensamientos son un caos, te cuesta priorizar y sientes que vives en modo "apagar incendios".</p>
+            </div>
+            <div class="problem-item">
+                <h3>Carga Emocional</h3>
+                <p>Te sientes culpable por descansar o poner límites, y la ansiedad por el futuro te paraliza.</p>
+            </div>
+            <div class="problem-item">
+                <h3>Pérdida de Identidad</h3>
+                <p>Eres madre, profesional, pareja... pero ya no sabes quién eres tú cuando nadie te necesita.</p>
+            </div>
+        </div>
+        
+        <p style="margin-top:50px; font-weight:600; font-size:1.1rem; color:var(--dark);">El primer paso no es hacer más... es detenerte y ordenar.</p>
+    </div>
+</section>
+
+
+<main id="servicios" class="services-section section">
+    <div class="container-lg">
+        
+        <div class="text-center">
+            <h2 class="section-title">Tu Ruta de Transformación</h2>
+            <p class="section-subtitle">Elige el nivel de acompañamiento que necesitas hoy para volver a ser tu prioridad.</p>
+        </div>
+
+        <div class="services-container">
+
+            <article class="service-card featured">
+                <div class="card-tag">Inicio Recomendado</div>
+                <div class="service-icon">🔍</div>
+                <h2>Diagnóstico:<br>Ruta de Poder</h2>
+
+                <p class="card-desc">
+                    Una sesión profunda de claridad para detener el caos. Identificamos tu bloqueo principal y diseñamos tu plan de acción inmediato.
+                </p>
+
+                <span class="price-tag">$70.000 COP / Sesión</span>
+
+                <ul class="benefits">
+                    <li>Ordenas tus pensamientos y prioridades</li>
+                    <li>Identificas la raíz de lo que te frena</li>
+                    <li>Te llevas acciones concretas para retomar el control</li>
+                    <li>Modalidad virtual (60 min)</li>
+                </ul>
+
+                <a class="cta-button" href="https://wa.me/message/C5ZES66757IMA1">
+                    Agendar mi Ruta
+                </a>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">💎</div>
+                <h2>Inmersión:<br>Mujer Imponente</h2>
+
+                <p class="card-desc">
+                    Programa intensivo de 4 semanas. Reconstruimos tu confianza desde la raíz, aprendes a gestionar tus emociones y a liderar tu vida sin culpa.
+                </p>
+
+                <span class="price-tag">$260.000 COP / Programa</span>
+
+                <ul class="benefits">
+                    <li>Autoconocimiento profundo y valores</li>
+                    <li>Herramientas de autoliderazgo y límites</li>
+                    <li>Diseño de visión de vida alineada</li>
+                    <li>4 sesiones (1 por semana) + Soporte</li>
+                </ul>
+
+                <a class="cta-button" 
+                   href="https://wa.me/message/C5ZES66757IMA1">
+                   Reservar mi Cupo
+                </a>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">👩‍👧</div>
+                <h2>Mentoría:<br>Hogar en Equilibrio</h2>
+
+                <p class="card-desc">
+                    Acompañamiento especializado para madres que sostienen su hogar solas. Reorganización práctica, emocional y personal.
+                </p>
+
+                <span class="price-tag">$80.000 COP / Sesión</span>
+
+                <ul class="benefits">
+                    <li>Estrategias realistas de equilibrio Vida/Maternidad</li>
+                    <li>Gestión eficaz de la carga mental</li>
+                    <li>Herramientas para cuidar tu bienestar</li>
+                    <li>Paquetes de 3 sesiones disponibles</li>
+                </ul>
+
+                <a class="cta-button" href="https://wa.me/message/C5ZES66757IMA1">
+                    Solicitar Mentoría
+                </a>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">🎤</div>
+                <h2>Talleres & Charlas<br>Corporativas</h2>
+
+                <p class="card-desc">
+                    Espacios formativos de alto impacto para empresas o comunidades enfocados en liderazgo femenino, bienestar y autoliderazgo.
+                </p>
+
+                <span class="price-tag" style="font-size:1.1rem;">Valor según requerimiento</span>
+
+                <ul class="benefits">
+                    <li>Contenido práctico y aplicable</li>
+                    <li>Fortalecimiento del talento femenino</li>
+                    <li>Herramientas de inteligencia emocional</li>
+                    <li>Formatos adaptables (On/Offline)</li>
+                </ul>
+
+                <a class="cta-button" href="https://wa.me/message/C5ZES66757IMA1">
+                    Cotizar Evento
+                </a>
+            </article>
+
+        </div>
+    </div>
+</main>
+
+<section id="sobre-mi" class="about-section section">
+    <div class="container-lg">
+        <div class="about-grid">
+            <div class="about-image-container">
+                <img src="img/smi.png" alt="Irina Ballesteros Ospino" class="about-image">
+            </div>
+            <div class="about-text">
+                <h2>Hola, soy Irina Ballesteros</h2>
+                <p>Entiendo perfectamente por lo que estás pasando porque yo también estuve allí: el perfeccionismo, la culpa por descansar y la sensación de que, si no lo hacía yo, nadie lo haría bien. Me dediqué a sostener a todos, menos a mí.</p>
+                <p>Mi misión es entregarte las herramientas prácticas y el acompañamiento humano que me permitieron a mí, y a muchas mujeres, recuperar el timón de nuestras vidas. No te enseño teoría; te acompaño en un proceso de transformación real para que vuelvas a decidir con la seguridad de la <strong>Mujer Imponente</strong> que eres.</p>
+                <span class="sig">Empieza con tu Ruta de Poder,</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonios" class="testimonials-section section">
+    <div class="container-lg">
+        <div class="text-center">
+            <h2 class="section-title">Lo que dicen ellas</h2>
+            <p class="section-subtitle">La transformación de otras mujeres imponentes es mi mejor carta de presentación.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"La Sesión de Claridad fue un antes y un después. Me ayudó a ordenar lo que tenía en la cabeza desde hace meses. Salí con claridad y decisiones que llevaba mucho tiempo postergando."</p>
+                <div class="testimonial-meta">
+                    <img 
+                        src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Avatar cliente" 
+                        class="testimonial-avatar">
+                    <div>
+                        <p class="testimonial-name">Ximena P.</p>
+                        <p class="testimonial-title">Profesional Independiente</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"El programa de 4 semanas me ayudó a entender por qué me costaba tanto poner límites. Hoy puedo decir lo que necesito sin sentir culpa y tengo mucho más claridad sobre mis prioridades."</p>
+                <div class="testimonial-meta">
+                     <img 
+                        src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Avatar cliente" 
+                        class="testimonial-avatar">
+
+                <div>
+                        <p class="testimonial-name">Maria R.</p>
+                        <p class="testimonial-title">Lider de Proyectos</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Como madre soltera sentía que todo dependía de mí y estaba agotada. La mentoría con Irina me ayudó a reorganizar mi vida y a cuidar también de mí sin sentir culpa. ¡Por fin duermo tranquila!"</p>
+                <div class="testimonial-meta">
+                    <img 
+                        src="https://cdn-icons-png.flaticon.com/512/847/847969.png" 
+                        alt="Avatar cliente" 
+                        class="testimonial-avatar">
+                    <div>
+                        <p class="testimonial-name">Marcela D.</p>
+                        <p class="testimonial-title">Madre emprendedora</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <img src="img/smi.png" alt="Logo SMI" class="footer-logo">
+    <p><strong>Soy Mujer Imponente</strong></p>
+    <p>Claridad | Liderazgo | Bienestar Emocional</p>
+    <p>© 2026 — Creado por Irina Ballesteros Ospino | Cartagena, Colombia.</p>
+</footer>
+
+<a href="https://wa.me/message/C5ZES66757IMA1" class="wa-float" target="_blank" title="Habla conmigo por WhatsApp">
+    <svg class="wa-icon" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.6-2.8-23.5-8.7-44.7-27.6-16.5-14.7-27.6-32.8-30.9-38.4-3.2-5.6-.3-8.6 2.4-11.4 2.5-2.4 5.5-6.5 8.3-9.8 2.8-3.3 3.7-5.6 5.6-9.2 1.9-3.7 1-6.9-.5-9.8-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.6 9.1 31.7 11.7 13.3 4.2 25.4 3.6 35.1 2.2 10.8-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+</a>
+
+</body>
+</html>
