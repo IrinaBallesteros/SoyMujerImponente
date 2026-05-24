@@ -294,8 +294,7 @@
             background: linear-gradient(135deg, var(--rose), var(--teal));
             z-index: -1;
         }
-
-        
+       
         .pain-sec {
             background: var(--cream);
             padding: 90px 24px;
@@ -539,6 +538,72 @@
         .t-name { font-weight: 700; font-size: 0.9rem; color: var(--ink); margin: 0; }
         .t-role { font-size: 0.78rem; color: var(--muted); margin: 0; }
 
+
+        .diary-sec {
+            padding: 100px 24px;
+            background: var(--white);
+        }
+
+        .diary-inner {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .diary-text {
+            font-size: 1.05rem;
+            margin: 24px 0;
+            max-width: 540px;
+            line-height: 1.8;
+        }
+
+        .diary-list {
+            list-style: none;
+            margin: 30px 0;
+            padding: 0;
+        }
+
+        .diary-list li {
+            padding: 10px 0;
+            font-size: 0.98rem;
+            color: var(--ink-soft);
+        }
+
+        .diary-price {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: var(--rose);
+            margin-bottom: 28px;
+        }
+
+        .diary-img {
+            width: 100%;
+            max-width: 360px;
+            border-radius: 28px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .diary-right {
+            text-align: center;
+        }
+
+        @media (max-width: 900px) {
+            .diary-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .diary-text {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .diary-list {
+                display: inline-block;
+                text-align: left;
+            }
+        }
         
         .cta-banner {
             background: linear-gradient(135deg, var(--rose) 0%, #c73366 50%, #9b1f55 100%);
@@ -693,7 +758,7 @@
         <p>Antes de dar el primer paso, quiero que sepas exactamente qué esperar de este proceso.</p>
         <div class="video-frame-wrap">
             <iframe
-                src="https://www.youtube.com/embed/dhrJrxJuoH0"
+                src="https://www.youtube.com/embed/CUUBgPTfQhk"
                 title="Bienvenida a Soy Mujer Imponente"
                 loading="lazy"
                 referrerpolicy="strict-origin-when-cross-origin"
@@ -702,7 +767,47 @@
         </div>
     </div>
 </section>
+<section class="diary-sec reveal">
+    <div class="wrap diary-inner">
 
+        <div class="diary-left">
+            <span class="sec-tag">✨ Tu nuevo comienzo.</span>
+
+            <h2 class="serif">
+                El Diario de la<br>
+                <em>Mujer Imponente</em>
+            </h2>
+
+            <p class="diary-text">
+                Una guía diseñada para ayudarte a recuperar claridad,
+                fortalecer tu autoestima y reconectar contigo misma
+                a través de ejercicios prácticos y reflexión consciente.
+            </p>
+
+            <ul class="diary-list">
+                <li>✨ Journaling guiado</li>
+                <li>💜 Claridad emocional</li>
+                <li>🎯 Enfoque y seguridad personal</li>
+            </ul>
+
+            <div class="diary-price">
+                $25.000 COP
+            </div>
+
+            <a href="https://wa.me/573001112233?text=Hola,%20quiero%20comprar%20El%20Diario%20de%20la%20Mujer%20Imponente"
+               class="btn-primary">
+               💜 Quiero mi Diario
+            </a>
+        </div>
+
+        <div class="diary-right">
+            <img src="img/diariosmi.png"
+                 alt="El Diario de la Mujer Imponente"
+                 class="diary-img">
+        </div>
+
+    </div>
+</section>
 
 <section class="pain-sec">
     <div class="pain-header center reveal">
@@ -753,7 +858,8 @@
                     <li>Plan de acción concreto e inmediato</li>
                     <li>Modalidad virtual (60 min)</li>
                 </ul>
-                <a href="https://wa.me/message/C5ZES66757IMA1" class="s-btn">Agendar mi Sesión →</a>
+                <a href="https://wa.me/573001112233?text=Hola,%20quiero%20información%20sobre%20Tu%20Ruta%20de%20Transformación%20✨
+                " class="s-btn">Agendar mi Sesión →</a>
             </div>
 
             <div class="s-card">
@@ -781,7 +887,8 @@
                     <li>Herramientas para tu bienestar</li>
                     <li>Paquetes de 3 sesiones disponibles</li>
                 </ul>
-                <a href="https://wa.me/message/C5ZES66757IMA1" class="s-btn">Solicitar Mentoría →</a>
+                <a href="https://wa.me/573001112233?text=Hola,%20quiero%20información%20sobre%20la%20Mentoría%20Hogar%20en%20Equilibrio%20💜
+                " class="s-btn">Solicitar Mentoría →</a>
             </div>
 
             <div class="s-card">
@@ -795,7 +902,8 @@
                     <li>Inteligencia emocional aplicada</li>
                     <li>On-site u Online — adaptable</li>
                 </ul>
-                <a href="https://wa.me/message/C5ZES66757IMA1" class="s-btn">Cotizar Evento →</a>
+                <a href="https://wa.me/573001112233?text=Hola,%20quiero%20información%20sobre%20Charlas%20Corporativas%20y%20Talleres%20✨
+                " class="s-btn">Cotizar Evento →</a>
             </div>
 
         </div>
